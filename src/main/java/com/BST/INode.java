@@ -11,5 +11,5 @@ public interface INode<K> {
 	
 	INode<K> getRight();
 
-	void setRight(INode<K> right);
+	void setRight(INode<K> right);//
 }
