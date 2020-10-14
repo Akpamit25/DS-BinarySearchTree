@@ -9,7 +9,7 @@ public interface INode<K> {
 
 	void setLeft(INode<K> left);
 	
-	INode<K> getRight();
+	INode<K> getRight();//
 
 	void setRight(INode<K> right);//
 }
