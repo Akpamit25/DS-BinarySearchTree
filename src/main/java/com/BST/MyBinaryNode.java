@@ -14,7 +14,7 @@ public class MyBinaryNode<K extends Comparable<K>> implements INode<K> {
 
 	@Override
 	public K getKey() {
-		return key;
+		return key;//
 	}
 
 	@Override

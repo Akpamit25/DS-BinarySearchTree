@@ -11,6 +11,7 @@ public class MyBinaryTree<K extends Comparable<K>> {
 		}
 	}
 
+
 	private void addKeyAtAppropriateNode(MyBinaryNode<K> pointer, K key) {
 		if (pointer.key.compareTo(key) == 1) {
 			if (pointer.left == null) {
@@ -26,6 +27,39 @@ public class MyBinaryTree<K extends Comparable<K>> {
 				addKeyAtAppropriateNode(pointer.right, key);
 			}
 		}
+	}
+
+
+	public boolean search(K key) {
+		return searchMyTree(root, key);
+	}
+
+	private boolean searchMyTree(MyBinaryNode<K> pointer, K key) {
+		boolean result = false;
+		if (pointer != null) {
+			int compareResult = pointer.key.compareTo(key);
+			if (compareResult == 1) {
+				if (pointer.left != null) {
+					if (pointer.left.getKey() == key) {
+						result = true;
+					} else {
+						result = searchMyTree(pointer.left, key);
+					}
+				}
+			}
+			if (compareResult == -1) {
+				if (pointer.right != null) {
+					if (pointer.right.key == key) {
+						result = true;
+					} else {
+						result = searchMyTree(pointer.right, key);
+					}
+				}
+			}
+			if (compareResult == 0)
+				result = true;
+		}
+		return result;
 	}
 
 

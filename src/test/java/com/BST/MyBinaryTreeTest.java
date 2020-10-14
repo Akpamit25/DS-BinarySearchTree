@@ -2,7 +2,6 @@ package com.BST;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
 class MyBinaryTreeTest {
@@ -39,6 +38,26 @@ class MyBinaryTreeTest {
 		int size = myTree.size();
 		assertEquals(13, size);
 
+	}
+
+	@Test
+	void givenATree_WhenSearchedForElement_IfPresent_ShouldReturnTrue() {
+		MyBinaryTree<Integer> myTree = new MyBinaryTree<Integer>();
+		myTree.add(56);
+		myTree.add(30);
+		myTree.add(70);
+		myTree.add(40);
+		myTree.add(22);
+		myTree.add(95);
+		myTree.add(60);
+		myTree.add(11);
+		myTree.add(65);
+		myTree.add(16);
+		myTree.add(67);
+		myTree.add(63);
+		myTree.add(3);
+		boolean result = myTree.search(63);
+		assertTrue(result);
 	}
 
 }
