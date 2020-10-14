@@ -23,8 +23,18 @@ public class MyBinaryTree<K extends Comparable<K>> {
 			if (pointer.right == null) {
 				pointer.right = new MyBinaryNode(key);
 			} else {
-				addKeyAtAppropriateNode(pointer.right, key);//
+				addKeyAtAppropriateNode(pointer.right, key);
 			}
 		}
+	}
+
+
+	public int size() {
+		return myTreeSize(root);
+	}
+
+
+	private int myTreeSize(MyBinaryNode<K> pointer) {
+		return (pointer == null) ? 0 : 1 + myTreeSize(pointer.left) + myTreeSize(pointer.right);
 	}
 }

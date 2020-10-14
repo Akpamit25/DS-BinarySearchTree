@@ -9,7 +9,7 @@ public class MyBinaryNode<K extends Comparable<K>> implements INode<K> {
 	public MyBinaryNode(K key) {
 		this.key = key;
 		this.left = null;
-		this.right = null;//
+		this.right = null;
 	}
 
 	@Override
